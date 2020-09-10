@@ -237,12 +237,12 @@
   }
 
   a {
-    $animationSpeed: 0.3s;
+    $menuItemAnimationSpeed: 0.3s;
     position: relative;
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color $animationSpeed ease-in-out;
+    transition: color $menuItemAnimationSpeed ease-in-out;
 
     &::before {
       content: "";
@@ -253,7 +253,7 @@
       right: 0;
       background-color: $c-light;
       opacity: 0;
-      transition: opacity 0s ease-out $animationSpeed, left $animationSpeed ease-out, background-color $animationSpeed ease-out;
+      transition: opacity 0s ease-out $menuItemAnimationSpeed, left $menuItemAnimationSpeed ease-out, background-color $menuItemAnimationSpeed ease-out;
     }
 
     &::after {
@@ -265,7 +265,7 @@
       background-color: $c-light;
       left: 0;
       opacity: 0;
-      transition: background-color $animationSpeed ease-in, width $animationSpeed ease-in;
+      transition: background-color $menuItemAnimationSpeed ease-in, width $menuItemAnimationSpeed ease-in;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -300,7 +300,7 @@
         opacity: 1;
         left: 0;
         background-color: $c-purple;
-        transition: left 0s ease-out $animationSpeed, opacity 0s ease-out;
+        transition: left 0s ease-out $menuItemAnimationSpeed, opacity 0s ease-out;
       }
 
       &::after {
