@@ -28,6 +28,8 @@
 
 .page-header__logo {
   @include hover;
+  $headerLogoAnimationSpeed: 0.15s;
+
   position: relative;
   flex: none;
   top: -0.5rem;
@@ -35,6 +37,14 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-20px);
+
+  &--show {
+    opacity: 1;
+    transform: none;
+    transition: opacity $headerLogoAnimationSpeed ease-in 0s, transform $headerLogoAnimationSpeed ease-in 0s;
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -177,6 +187,7 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -268,6 +279,7 @@
     &.active {
       &::after {
         display: block;
+        width: 0;
       }
     }
 
@@ -279,6 +291,18 @@
       &::after {
         opacity: 1;
         background-color: $c-purple;
+      }
+    }
+  }
+
+  &--show {
+    opacity: 1;
+    transition: opacity 0.15s ease-in 0.1s;
+
+    a.active {
+      &::after {
+        width: 100%;
+        transition: width 0.35s ease-in 0.1s;
       }
     }
   }
