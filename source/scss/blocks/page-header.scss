@@ -237,20 +237,35 @@
   }
 
   a {
+    $menuItemAnimationSpeed: 0.3s;
     position: relative;
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
+    transition: color $menuItemAnimationSpeed ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 2px;
+      left: 100%;
+      right: 0;
+      background-color: $c-light;
+      opacity: 0;
+      transition: opacity 0s ease-out $menuItemAnimationSpeed, left $menuItemAnimationSpeed ease-out, background-color $menuItemAnimationSpeed ease-out;
+    }
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
       background-color: $c-light;
-      display: none;
       left: 0;
+      opacity: 0;
+      transition: background-color $menuItemAnimationSpeed ease-in, width $menuItemAnimationSpeed ease-in;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -267,7 +282,12 @@
 
     &.active {
       &::after {
-        display: block;
+        width: 100%;
+        opacity: 1;
+      }
+
+      &::before {
+        display: none;
       }
     }
 
@@ -276,8 +296,16 @@
       color: $c-purple;
       outline: none;
 
+      &::before {
+        opacity: 1;
+        left: 0;
+        background-color: $c-purple;
+        transition: left 0s ease-out $menuItemAnimationSpeed, opacity 0s ease-out;
+      }
+
       &::after {
         opacity: 1;
+        width: 100%;
         background-color: $c-purple;
       }
     }

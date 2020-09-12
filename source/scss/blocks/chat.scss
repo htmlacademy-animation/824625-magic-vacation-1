@@ -185,4 +185,30 @@
 
 .chat__footer {
   margin-top: auto;
+
+  .form {
+    justify-content: flex-end;
+
+    .form__field {
+      animation: chat_field_grow 0.4s ease-in 0s 1 normal forwards running;
+
+      @keyframes chat_field_grow {
+        from {
+          width: 0;
+          padding: 0;
+        }
+
+        to {
+          width: calc(100% - 21rem);
+          padding: 0 3rem;
+        }
+      }
+
+
+    }
+
+    .form__button {
+      flex-grow: 0;
+    }
+  }
 }
