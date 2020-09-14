@@ -1,5 +1,6 @@
 .social-block {
   position: relative;
+  transform: scale(0);
 
   &:hover {
     .social-block__list {
