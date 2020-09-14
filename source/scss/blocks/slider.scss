@@ -63,6 +63,18 @@
       }
     }
   }
+
+  &.swiper-slide-active {
+    .slider__item-text {
+      animation: fade_in_right 0.25s ease-in 0.4s 1 normal forwards running;
+    }
+  }
+
+  &.swiper-slide-next {
+    .slider__item-text {
+      animation: fade_in_right 0.25s ease-in 0.65s 1 normal forwards running;
+    }
+  }
 }
 
 .slider__item-title {
@@ -96,6 +108,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(20px);
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
