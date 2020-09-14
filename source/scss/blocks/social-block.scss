@@ -8,11 +8,6 @@
       pointer-events: auto;
     }
   }
-
-  &--show {
-    transform: none;
-    transition: 0.35s transform cubic-bezier(0.31, 0.65, 0.68, 1.68) 0.15s;
-  }
 }
 
 .social-block__toggler {

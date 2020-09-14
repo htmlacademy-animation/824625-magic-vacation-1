@@ -9,7 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
-import headerAnimations from "./modules/animations/headerAnimations";
+import animationsOnLoad from "./modules/animations/animationsOnLoad";
 
 // init modules
 mobileHeight();
@@ -20,7 +20,7 @@ chat();
 result();
 form();
 social();
-headerAnimations();
+animationsOnLoad();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
