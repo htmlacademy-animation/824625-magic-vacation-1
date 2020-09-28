@@ -21,3 +21,13 @@
     transform: translateY(0);
   }
 }
+
+@keyframes scale_in {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
