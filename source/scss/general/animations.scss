@@ -29,3 +29,24 @@ body.loaded {
     transition: transform 0.5s $animationOnLoadTimingFunction;
   }
 }
+
+.letters-animation {
+  &__word {
+    display: inline-block;
+    margin: 0 5px;
+    overflow: hidden;
+
+    span {
+      transform: translate3d(0, 1em, 0);
+      display: inline-block;
+    }
+  }
+
+  &.active {
+    .letters-animation__word {
+      span {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
