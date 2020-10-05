@@ -70,5 +70,3 @@ export const animationRulesTitle = new LettersAnimation(`.rules__title`, 500, `a
 setTimeout(() => {
   animationRulesTitle.runAnimation();
 }, 500);
-
-
