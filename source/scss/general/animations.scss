@@ -30,6 +30,25 @@ body.loaded {
   }
 }
 
+.screen--story.active {
+  .slider__control {
+    &--next {
+      animation-name: roll_in_right;
+    }
+
+    &--prev {
+      animation-name: roll_in_left;
+    }
+
+    &--next,
+    &--prev {
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0, 0.91, 0.64, 1.21);
+      animation-duration: 0.3s;
+    }
+  }
+}
+
 .letters-animation {
   &__word {
     display: inline-block;
